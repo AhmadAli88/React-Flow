@@ -8,7 +8,7 @@ import ReactFlow, {
   addEdge,
   Handle,
 } from 'reactflow';
-
+import PropTypes from "prop-types"
 import 'reactflow/dist/style.css';
 
 const initialNodes = [
@@ -27,7 +27,9 @@ const CustomNode = ({ data }) => {
     </div>
   );
 };
-
+CustomNode.propTypes={
+data: PropTypes.object
+}
 function CustomFlow() {
   const [nodes, , onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
